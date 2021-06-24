@@ -13,7 +13,7 @@ const Header = ({ onAdd, showAdd, title }) => {
     <header className="header">
       {/* <h1 style={{ color: 'red', backgroundColor: 'black' }}>Easy money: {props.title}</h1> */}
       {/* <h1 style={headingStyle}>Easy money: {title}</h1> */}
-      <h1>Easy Money: {title}</h1>
+      <h1>AO: {title}</h1>
       {location.pathname === "/" && (
         <Button
           onAdd={onAdd}
