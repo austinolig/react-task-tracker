@@ -4,7 +4,7 @@ import Footer from "./components/Footer.js";
 import Tasks from "./components/Tasks.js";
 import AddTask from "./components/AddTask.js";
 import About from "./components/About.js";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
   // fetch tasks
   const fetchTasks = async () => {
     const res = await fetch(
-      "http://my-json-server.typicode.com/AustinOlig/react-task-tracker/tasks"
+      "https://my-json-server.typicode.com/AustinOlig/react-task-tracker/tasks"
     );
     const data = await res.json();
 
@@ -32,7 +32,7 @@ const App = () => {
 
   const fetchTask = async (id) => {
     const res = await fetch(
-      `http://my-json-server.typicode.com/AustinOlig/react-task-tracker/tasks/${id}`
+      `https://my-json-server.typicode.com/AustinOlig/react-task-tracker/tasks/${id}`
     );
     const data = await res.json();
 
@@ -43,7 +43,7 @@ const App = () => {
   const deleteTask = async (id) => {
     console.log("Delete!", id);
     await fetch(
-      `http://my-json-server.typicode.com/AustinOlig/react-task-tracker/tasks/${id}`,
+      `https://my-json-server.typicode.com/AustinOlig/react-task-tracker/tasks/${id}`,
       { method: "DELETE" }
     );
 
@@ -58,7 +58,7 @@ const App = () => {
     const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
 
     const res = await fetch(
-      `http://my-json-server.typicode.com/AustinOlig/react-task-tracker/tasks/${id}`,
+      `https://my-json-server.typicode.com/AustinOlig/react-task-tracker/tasks/${id}`,
       {
         method: "PUT",
         headers: {
@@ -84,7 +84,7 @@ const App = () => {
     // console.log('Add!', newTask)
     // setTasks([...tasks, newTask])
     const res = await fetch(
-      "http://my-json-server.typicode.com/AustinOlig/react-task-tracker/tasks",
+      "https://my-json-server.typicode.com/AustinOlig/react-task-tracker/tasks",
       {
         method: "POST",
         headers: {
